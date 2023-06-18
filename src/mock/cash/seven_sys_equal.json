@@ -1,0 +1,8 @@
+[
+    {"id":"1","time":0,"overtime":0,"discount":0.01},
+    {"id":"2","time":30,"overtime":0,"discount":0.01},
+    {"id":"3","time":90,"overtime":0,"discount":0.015},
+    {"id":"4","time":150,"overtime":1,"discount":0.02},
+    {"id":"5","time":200,"overtime":10,"discount":0},
+    {"id":"6","time":400,"overtime":6,"discount":0.03}
+]
