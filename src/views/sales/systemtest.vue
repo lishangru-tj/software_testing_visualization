@@ -34,7 +34,6 @@
       <el-table
         :data="tableData"
         :height="tableHeight"
-        border
         style="width: 100%"
         v-loading="loading"
         :row-class-name="tableRowClassName"
@@ -120,7 +119,7 @@ export default {
   props: ["parentHeight"],
   data() {
     return {
-      options: [{ value: "1", label: "健壮性边界分析法" }],
+      options: [{ value: "1", label: "边界值分析法" }],
       value: "1",
       tableData: [],
       loading: false,

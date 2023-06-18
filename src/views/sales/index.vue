@@ -6,11 +6,7 @@
           <SalesQuestion />
         </el-tab-pane>
 
-        <el-tab-pane
-          class="main-container"
-          label="系统测试用例测试"
-          name="second"
-        >
+        <el-tab-pane class="main-container" label="系统测试用例测试" name="second">
           <SystemTest :parentHeight="parentHeight" />
         </el-tab-pane>
 
@@ -52,16 +48,15 @@ export default {
   created() {
     window.addEventListener("resize", this.getHeight);
   },
-  mounted() {},
+  mounted() { },
   methods: {
     getHeight() {
       try {
         this.parentHeight = this.$refs.tabs.offsetHeight;
-      } catch (err) {}
+      } catch (err) { }
     },
   },
 };
 </script>
 
-<style scoped lang="less">
-</style>
+<style scoped lang="less"></style>
