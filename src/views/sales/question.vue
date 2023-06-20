@@ -9,6 +9,7 @@
 
     </div>
 
+  </div>
 </template>
 
 <script>
@@ -18,19 +19,16 @@ export default {
   components: {},
   props: {},
   data() {
-    return { }
+    return {}
   },
   computed: {},
   watch: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
   methods: {
 
   },
 };
 </script>
 
-<style scoped lang="less">
-
-
-</style>
+<style scoped lang="less"></style>

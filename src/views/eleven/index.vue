@@ -1,31 +1,39 @@
 <template>
-  <div>
-    <el-card shadow="hover">
-      <el-tabs v-model="activeName" @tab-click="handleClick">
+<div ref="tabs" >
+<el-card id="main-card" style="height:100%" shadow="hover">
+      <el-tabs v-model="activeName" >
 
         <el-tab-pane label="问题描述" name="first">
           <SalesQuestion />
         </el-tab-pane>
 
+        <el-tab-pane label="正交实验用例测试" name="second">
+          <SystemTest :parentHeight="parentHeight" />
 
+        </el-tab-pane>
+
+        <!-- <el-tab-pane  label="单测试用例输入" name="third">
+          <SingleCase />
+        </el-tab-pane>
+
+
+        <el-tab-pane label="缺陷版本记录" name="fifth">
+          <BugRecord  :parentHeight="parentHeight"/>
+        </el-tab-pane>
+         -->
       </el-tabs>
     </el-card>
+</div>
 
-
-
-
-
-
-    
-  </div>
 </template>
 
 <script>
 
 import SalesQuestion from "./question";
+import SystemTest from "./systemtest.vue";
 export default {
   name: "two",
-  components: { SalesQuestion },
+  components: { SalesQuestion,SystemTest },
   props: {},
   data() {
     return {

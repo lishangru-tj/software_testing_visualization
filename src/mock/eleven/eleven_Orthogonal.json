@@ -1,0 +1,327 @@
+[
+    {
+      "Test Case": "用例1",
+      "interface": "正常交易包",
+      "goods": 1,
+      "pay": "系统账户余额支付",
+      "invoice": "日用品",
+      "money": "货到付款",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例2",
+      "interface": "查询包",
+      "goods": 2,
+      "pay": "货到付款",
+      "invoice": "电脑配件",
+      "money": "银行支付",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例3",
+      "interface": "退货包",
+      "goods": 3,
+      "pay": "工行账户支付",
+      "invoice": "鞋",
+      "money": "系统余额",
+      "order": "处理完成"
+    },
+    {
+      "Test Case": "用例4",
+      "interface": "换货包",
+      "goods": 4,
+      "pay": "农行账户支付",
+      "invoice": "帽",
+      "money": "超出余额",
+      "order": "订单取消"
+    },
+    {
+      "Test Case": "用例5",
+      "interface": "部分退货包",
+      "goods": 5,
+      "pay": "建行账户支付",
+      "invoice": "家电",
+      "money": "最大限额",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例6",
+      "interface": "部分换货包",
+      "goods": 6,
+      "pay": "交行账户支付",
+      "invoice": "服装",
+      "money": "超出限额",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例7",
+      "interface": "正常交易包",
+      "goods": 1,
+      "pay": "货到付款",
+      "invoice": "电脑",
+      "money": "系统余额",
+      "order": "处理完成"
+    },
+    {
+      "Test Case": "用例8",
+      "interface": "查询包",
+      "goods": 2,
+      "pay": "农行账户支付",
+      "invoice": "ipad",
+      "money": "银行支付",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例9",
+      "interface": "退货包",
+      "goods": 3,
+      "pay": "交行账户支付",
+      "invoice": "手机",
+      "money": "超出余额",
+      "order": "订单取消"
+    },
+    {
+      "Test Case": "用例10",
+      "interface": "换货包",
+      "goods": 4,
+      "pay": "礼品卡支付",
+      "invoice": "化妆品",
+      "money": "货到付款",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例11",
+      "interface": "部分退货包",
+      "goods": 5,
+      "pay": "系统账户余额支付",
+      "invoice": "食品",
+      "money": "最大限额",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例12",
+      "interface": "部分换货包",
+      "goods": 6,
+      "pay": "农行账户支付",
+      "invoice": "其他",
+      "money": "银行支付",
+      "order": "处理完成"
+    },
+    {
+      "Test Case": "用例13",
+      "interface": "正常交易包",
+      "goods": 1,
+      "pay": "工行账户支付",
+      "invoice": "日用品",
+      "money": "系统余额",
+      "order": "订单取消"
+    },
+    {
+      "Test Case": "用例14",
+      "interface": "查询包",
+      "goods": 2,
+      "pay": "系统账户余额支付",
+      "invoice": "电脑配件",
+      "money": "银行支付",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例15",
+      "interface": "退货包",
+      "goods": 3,
+      "pay": "交行账户支付",
+      "invoice": "鞋",
+      "money": "货到付款",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例16",
+      "interface": "换货包",
+      "goods": 4,
+      "pay": "礼品卡支付",
+      "invoice": "帽",
+      "money": "超出限额",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例17",
+      "interface": "部分退货包",
+      "goods": 5,
+      "pay": "系统账户余额支付",
+      "invoice": "家电",
+      "money": "货到付款",
+      "order": "订单取消"
+    },
+    {
+      "Test Case": "用例18",
+      "interface": "部分换货包",
+      "goods": 6,
+      "pay": "农行账户支付",
+      "invoice": "服装",
+      "money": "银行支付",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例19",
+      "interface": "正常交易包",
+      "goods": 1,
+      "pay": "系统账户余额支付",
+      "invoice": "电脑",
+      "money": "系统余额",
+      "order": "处理完成"
+    },
+    {
+      "Test Case": "用例20",
+      "interface": "查询包",
+      "goods": 2,
+      "pay": "工行账户支付",
+      "invoice": "ipad",
+      "money": "超出余额",
+      "order": "订单取消"
+    },
+    {
+      "Test Case": "用例21",
+      "interface": "退货包",
+      "goods": 3,
+      "pay": "建行账户支付",
+      "invoice": "手机",
+      "money": "货到付款",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例22",
+      "interface": "换货包",
+      "goods": 4,
+      "pay": "交行账户支付",
+      "invoice": "化妆品",
+      "money": "最大限额",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例23",
+      "interface": "部分退货包",
+      "goods": 5,
+      "pay": "农行账户支付",
+      "invoice": "食品",
+      "money": "系统余额",
+      "order": "处理完成"
+    },
+    {
+      "Test Case": "用例24",
+      "interface": "部分换货包",
+      "goods": 6,
+      "pay": "礼品卡支付",
+      "invoice": "其他",
+      "money": "银行支付",
+      "order": "订单取消"
+    },
+    {
+      "Test Case": "用例25",
+      "interface": "正常交易包",
+      "goods": 1,
+      "pay": "工行账户支付",
+      "invoice": "日用品",
+      "money": "货到付款",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例26",
+      "interface": "查询包",
+      "goods": 2,
+      "pay": "农行账户支付",
+      "invoice": "电脑配件",
+      "money": "银行支付",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例27",
+      "interface": "退货包",
+      "goods": 3,
+      "pay": "交行账户支付",
+      "invoice": "鞋",
+      "money": "系统余额",
+      "order": "处理完成"
+    },
+    {
+      "Test Case": "用例28",
+      "interface": "换货包",
+      "goods": 4,
+      "pay": "礼品卡支付",
+      "invoice": "帽",
+      "money": "超出余额",
+      "order": "订单取消"
+    },
+    {
+      "Test Case": "用例29",
+      "interface": "部分退货包",
+      "goods": 5,
+      "pay": "系统账户余额支付",
+      "invoice": "家电",
+      "money": "最大限额",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例30",
+      "interface": "部分换货包",
+      "goods": 6,
+      "pay": "农行账户支付",
+      "invoice": "服装",
+      "money": "超出限额",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例31",
+      "interface": "正常交易包",
+      "goods": 1,
+      "pay": "货到付款",
+      "invoice": "电脑",
+      "money": "系统余额",
+      "order": "处理完成"
+    },
+    {
+      "Test Case": "用例32",
+      "interface": "查询包",
+      "goods": 2,
+      "pay": "农行账户支付",
+      "invoice": "ipad",
+      "money": "银行支付",
+      "order": "正在处理"
+    },
+    {
+      "Test Case": "用例33",
+      "interface": "退货包",
+      "goods": 3,
+      "pay": "交行账户支付",
+      "invoice": "手机",
+      "money": "超出余额",
+      "order": "订单取消"
+    },
+    {
+      "Test Case": "用例34",
+      "interface": "换货包",
+      "goods": 4,
+      "pay": "礼品卡支付",
+      "invoice": "化妆品",
+      "money": "货到付款",
+      "order": "正在送货"
+    },
+    {
+      "Test Case": "用例35",
+      "interface": "部分退货包",
+      "goods": 5,
+      "pay": "系统账户余额支付",
+      "invoice": "食品",
+      "money": "最大限额",
+      "order": "处理完成"
+    },
+    {
+      "Test Case": "用例36",
+      "interface": "部分换货包",
+      "goods": 6,
+      "pay": "农行账户支付",
+      "invoice": "其他",
+      "money": "银行支付",
+      "order": "订单取消"
+    }
+  ]
+  
