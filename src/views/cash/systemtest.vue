@@ -138,6 +138,7 @@ export default {
     reset(value) {
       if (value === "1") {
         this.json = mock_1_json;
+        introduce: "边界值法",
         this.initTableData(mock_1_json);
       }
       else if (value === "2") {

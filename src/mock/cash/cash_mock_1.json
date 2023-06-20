@@ -2,7 +2,7 @@
     {"id": "TS1","year":2021,"month":5,"X": 0,"Y": 0,"discount":0},
     {"id": "TS2","year":2021,"month":5,"X": 60,"Y": 0,"discount":0.01},
     {"id": "TS3","year":2021,"month":5,"X": 61,"Y": 0,"discount":0.015},
-    {"id": "TS4","year":2021,"month":5,"X": 120,"Y": 3,"discount":0.014},
+    {"id": "TS4","year":2021,"month":5,"X": 120,"Y": 3,"discount":0.015},
     {"id": "TS5","year":2021,"month":5,"X": 121,"Y": 3,"discount":0.02},
     {"id": "TS6","year":2021,"month":5,"X": 300,"Y": 6,"discount":0.025},
     {"id": "TS7","year":2021,"month":5,"X": 301,"Y": 6,"discount":0.03},
