@@ -21,11 +21,12 @@
           <el-menu-item index="/sales">电脑销售系统</el-menu-item>
           <el-menu-item index="/two">第2题：销售管理系统</el-menu-item>
           <el-menu-item index="/four">第4题：讨论</el-menu-item>
+          <el-menu-item index="/five">第5题：电商平台系统测试</el-menu-item>
           <el-menu-item index="/seven">第7题：实时系统</el-menu-item>
           <el-menu-item index="/nine">第9题：ATM机</el-menu-item>
           <el-menu-item index="/ten">第10题：ERP系统</el-menu-item>
           <el-menu-item index="/eleven">第11题：实时Web系统</el-menu-item>
-          <el-menu-item index="/twelve">第12题：构建程序图</el-menu-item>
+          <el-menu-item index="/twelve">第12题：ATM状态图</el-menu-item>
           <el-menu-item index="/thirteen">第13题：销售系统</el-menu-item>
         </el-menu-item-group>
       </el-submenu>

@@ -8,6 +8,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // import Eight from "@/views/eight"
+import Ecommerce from '@/views/ecommerce/'
 import Eleven from '@/views/eleven/'
 import Four from '@/views/four/'
 import Nine from '@/views/nine/'
@@ -16,7 +17,6 @@ import Ten from '@/views/ten/'
 import Thirteen from '@/views/thirteen/'
 import Twelve from '@/views/twelve/'
 import Two from '@/views/two/'
-
 import Unit from '@/views/unit/'
 import Inte from '@/views/inte/'
 
@@ -37,11 +37,7 @@ const routes = [
         name:'home',
         component:Home
       },
-      // {
-      //   path:'/eight',
-      //   name:'eight',
-      //   component:Eight
-      // },
+      
       {
         path:'/cash',
         name:'cash',
@@ -65,6 +61,11 @@ const routes = [
         path:'/two',
         name:'two',
         component:Two
+      },
+      {
+        path:'/five',
+        name:'five',
+        component:Ecommerce
       },
       {
         path:'/four',

@@ -98,7 +98,6 @@
 <script>
 import mock_1_json from "@/mock/triangle/triangle_mock_1.json";
 import mock_2_json from "@/mock/triangle/triangle_mock_2.json";
-//import { testtriangle } from "@/api/triangletest.js";
 export default {
   name: "SystemTest",
   components: {},
@@ -136,6 +135,18 @@ export default {
     this.initTableData(mock_1_json);
   },
   methods: {
+    testTriangle(a, b, c) {
+      if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0)
+        return '不构成三角形';
+      else if (a + b <= c || b + c <= a || a + c <= b)
+        return '不构成三角形';
+      else if (a === b && b === c)
+        return '等边三角形';
+      else if (a === b || b === c|| a === c) 
+        return '等腰三角形';
+      else
+        return '一般三角形';
+    },
     initTableData(json) {
       this.classState = [];
       this.tableData = [];
@@ -147,6 +158,7 @@ export default {
         newData["actual"] = "";
         newData["info"] = "";
         newData["state"] = null;
+        newData["time"] = null;
         this.tableData.push(newData);
       });
     },
@@ -154,33 +166,20 @@ export default {
       return this.classState[rowIndex];
     },
     doTest() {
-      //  change newData's structure
-      const _this = this;
       this.loading = true;
-      testtriangle(this.inputData)
-        .then((res) => {
-          _this.tableData.forEach((item, index) => {
-            let responseObject = res.data.test_result[index];
-            item.actual = responseObject.actual;
-            item.info = responseObject.info;
-            item.state = item.expectation == item.actual ? true : false;
-            item.time = responseObject.test_time;
-            _this.classState[index] = item["state"]
-              ? "success-row"
-              : "error-row";
-          });
-          this.$message({
-            message: "测试成功",
-            type: "success",
-          });
-          _this.loading = false;
-        })
-
-        .catch((err) => {
-          _this.$message.error("Server Error");
-          _this.loading = false;
-        });
+      for (let i = 0; i < this.tableData.length; i++) {
+        const data = this.tableData[i];
+        const a = parseInt(data.A);
+        const b = parseInt(data.B);
+        const c = parseInt(data.C);
+        const result = this.testTriangle(a, b, c);
+        data.actual = result;
+        data.state = result === data.expectation;
+        data.time = performance.now();
+      }
+      this.loading = false;
     },
+
     reset(value) {
       if (value === "1") {
         this.initTableData(mock_1_json);
