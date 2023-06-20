@@ -18,6 +18,7 @@ import Twelve from '@/views/twelve/'
 import Two from '@/views/two/'
 
 import Unit from '@/views/unit/'
+import Inte from '@/views/inte/'
 
 Vue.use(VueRouter)
 
@@ -99,6 +100,11 @@ const routes = [
         path:'/unit',
         name:'unit',
         component:Unit
+      },
+      {
+        path:'/inte',
+        name:'inte',
+        component:Inte
       }
 
     ]
