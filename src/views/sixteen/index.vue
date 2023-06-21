@@ -2,29 +2,30 @@
   <div>
     <el-card shadow="hover">
       <el-tabs v-model="activeName" @tab-click="handleClick">
+
         <el-tab-pane label="问题描述" name="first">
-          <ATMQuestion />
+          <SalesQuestion />
         </el-tab-pane>
-        <el-tab-pane label="人工测试" name="second">
-          <ATMTest />
-        </el-tab-pane>
-        <el-tab-pane label="测试用例" name="third">
-          <ATMUseCase />
-        </el-tab-pane>
+
+
       </el-tabs>
-     
     </el-card>
+
+
+
+
+
+
+    
   </div>
 </template>
 
 <script>
 
-import ATMQuestion from "./question";
-import ATMTest from "./testing";
-import ATMUseCase from "./usecase";
+import SalesQuestion from "./question";
 export default {
-  name: "twelve",
-  components: { ATMQuestion, ATMTest,ATMUseCase},
+  name: "sixteen",
+  components: { SalesQuestion },
   props: {},
   data() {
     return {

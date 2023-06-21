@@ -11,12 +11,6 @@
       </el-tabs>
     </el-card>
 
-
-
-
-
-
-    
   </div>
 </template>
 

@@ -1,0 +1,13 @@
+[
+    {"id": "TS01","M": "1","I": "1","P":"1","predict":"正常","pre_amount":"100","pre_earn":"10.0000"},
+    {"id": "TS02","M": "2","I": "1","P":"1","predict":"正常","pre_amount":"125","pre_earn":"12.5"},
+    {"id": "TS03","M": "10","I": "9","P":"10","predict":"正常","pre_amount":"970","pre_earn":"97.0000"},
+    {"id": "TS04","M": "10","I": "10","P":"10","predict":"正常","pre_amount":"1000","pre_earn":"100.0000"},
+    {"id": "TS05","M": "10","I": "10","P":"11","predict":"正常","pre_amount":"1045","pre_earn":"156.7500"},
+    {"id": "TS06","M": "14","I": "14","P":"14","predict":"正常","pre_amount":"1400","pre_earn":"210.0000"},
+    {"id": "TS07","M": "17","I": "18","P":"18","predict":"正常","pre_amount":"1775","pre_earn":"266.2500"},
+    {"id": "TS08","M": "18","I": "18","P":"18","predict":"正常","pre_amount":"1800","pre_earn":"270.0000"},
+    {"id": "TS09","M": "18","I": "19","P":"18","predict":"正常","pre_amount":"1830","pre_earn":"366.0000"},
+    {"id": "TS10","M": "70","I": "80","P":"89","predict":"正常","pre_amount":"8155","pre_earn":"1,631.0000"},
+    {"id": "TS11","M": "70","I": "80","P":"90","predict":"正常","pre_amount":"8200","pre_earn":"1,640.0000"}
+]

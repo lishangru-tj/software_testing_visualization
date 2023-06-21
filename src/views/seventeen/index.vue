@@ -6,30 +6,20 @@
         <el-tab-pane label="问题描述" name="first">
           <SalesQuestion />
         </el-tab-pane>
-        <el-tab-pane label="系统测试用例测试" name="second">
-          <SystemTest :parentHeight="parentHeight" />
 
-        </el-tab-pane>
 
       </el-tabs>
     </el-card>
 
-
-
-
-
-
-    
   </div>
 </template>
 
 <script>
 
 import SalesQuestion from "./question";
-import SystemTest from "./systemtest.vue";
 export default {
-  name: "thirteen",
-  components: { SalesQuestion,SystemTest },
+  name: "ten",
+  components: { SalesQuestion },
   props: {},
   data() {
     return {
