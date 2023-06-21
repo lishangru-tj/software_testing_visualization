@@ -10,16 +10,13 @@
         <el-button @click="reset(value)" class="reset-button" type="warning" plain>重置</el-button>
       </div>
     </div>
-
-    <el-divider content-position="right">测试用例</el-divider>
-
     <div class="main-table">
       <el-table :data="tableData" :height="tableHeight" style="width: 100%" v-loading="loading"
         :row-class-name="tableRowClassName">
         <el-table-column prop="id" label="测试用例编号" width="120" align="center"></el-table-column>
-        <el-table-column prop="M" label="销售的主机数量M（台）" width="150" align="center"></el-table-column>
-        <el-table-column prop="I" label="销售的显示器数量I（台）" width="150" align="center"></el-table-column>
-        <el-table-column prop="P" label="销售的外设数量P（套）" width="150" align="center"></el-table-column>
+        <el-table-column prop="M" label="销售主机数量M（台）" width="150" align="center"></el-table-column>
+        <el-table-column prop="I" label="销售显示器数量I（台）" width="180" align="center"></el-table-column>
+        <el-table-column prop="P" label="销售外设数量P（套）" width="180" align="center"></el-table-column>
         <el-table-column prop="predict" label="预计状态" width="100" align="center"></el-table-column>
         <el-table-column prop="pre_amount" label="预计销售额" width="100" align="center"></el-table-column>
         <el-table-column prop="pre_earn" label="预计佣金" width="100" align="center"></el-table-column>
@@ -65,7 +62,7 @@ export default {
   },
   computed: {
     tableHeight() {
-      return this.parentHeight - 260 > 700 ? 700 : this.parentHeight - 260;
+      return this.parentHeight - 260 > 600 ? 600 : this.parentHeight - 260;
     },
   },
   watch: {
