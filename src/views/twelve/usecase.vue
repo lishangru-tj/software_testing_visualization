@@ -50,7 +50,7 @@ export default {
       return [
         {
           name: '输入银行卡，卡片未识别',
-          actions: ['Insert Card','Card Rejected'],
+          actions: ['Insert Card', 'Card Rejected'],
           expectedStatus: 'Card Rejected',
           result:null
         },

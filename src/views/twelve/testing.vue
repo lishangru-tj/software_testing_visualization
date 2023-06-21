@@ -21,7 +21,7 @@
       <h2>状态转换记录</h2>
       <ul>
         <li v-for="statusChange in statusHistory" :key="statusChange.action">
-          从状态 <strong>{{ statusChange.fromStatus }}</strong> 到状态 <strong>{{ statusChange.toStatus }}</strong>，执行操作 <strong>{{ statusChange.action }}</strong>
+          从状态 <strong>{{ statusChange.fromStatus }}</strong> 到状态 <strong>{{ statusChange.toStatus }}</strong>
         </li>
       </ul>
     </el-card>

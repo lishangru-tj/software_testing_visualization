@@ -17,14 +17,11 @@
       </el-form-item>
       <el-form-item label="程序预期输出">
         <el-select v-model="formLabelAlign.expectation">
-          <el-option label="不能构成三角形" value="不能构成三角形"></el-option>
-          <el-option label="是等边三角形" value="是等边三角形"></el-option>
-          <el-option label="是等腰直角三角形" value="是等腰直角三角形"></el-option>
-          <el-option label="是等腰的钝角三角形" value="是等腰的钝角三角形"></el-option>
-          <el-option label="是等腰三角形" value="是等腰三角形"></el-option>
-          <el-option label="是直角三角形" value="是直角三角形"></el-option>
-          <el-option label="是普通的钝角三角形" value="是普通的钝角三角形"></el-option>
-          <el-option label="是普通的锐角三角形" value="是普通的锐角三角形"></el-option>
+          <el-option label="不构成三角形" value="不构成三角形"></el-option>
+          <el-option label="等边三角形" value="等边三角形"></el-option>
+          <el-option label="等腰三角形" value="等腰三角形"></el-option>
+          <el-option label="一般三角形" value="一般三角形"></el-option>
+          <el-option label="输入非法" value="输入非法"></el-option>
         </el-select>
       </el-form-item>
     </el-form>
@@ -86,23 +83,19 @@ export default {
       this.testResult = this.actual === this.formLabelAlign.expectation ? '通过' : '不通过';
     },
     testTriangle(a, b, c) {
-      if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0)
-      return '不构成三角形';
+      a = parseInt(a);
+      b = parseInt(b);
+      c = parseInt(c);
+      if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0|| a > 200 || b > 200 || c > 200)
+        return '输入非法';
       else if (a + b <= c || b + c <= a || a + c <= b)
-        return '不能构成三角形';
+        return '不构成三角形';
       else if (a === b && b === c)
-        return '是等边三角形';
-      else if (a === b || b === c|| a === c) {
-        if (a ** 2 + b ** 2 === c ** 2 || b ** 2 + c ** 2 === a ** 2 || a ** 2 + c ** 2 === b ** 2)
-          return '是等腰直角三角形';
-        else
-          return '是等腰三角形';
-      } else if (a ** 2 + b ** 2 === c ** 2 || b ** 2 + c ** 2 === a ** 2 || a ** 2 + c ** 2 === b ** 2)
-        return '是直角三角形';
-      else if (a ** 2 + b ** 2 < c ** 2 || b ** 2 + c ** 2 < a ** 2 || a ** 2 + c ** 2 < b ** 2)
-        return '是普通的钝角三角形';
+        return '等边三角形';
+      else if (a === b || b === c|| a === c) 
+        return '等腰三角形';
       else
-        return '是普通的锐角三角形';
+        return '一般三角形';
     }
   },
 };
