@@ -7,17 +7,9 @@
           <SalesQuestion />
         </el-tab-pane>
 
-        <el-tab-pane label="系统测试用例测试" name="second">
-          <SystemTest :parentHeight="parentHeight" />
-        </el-tab-pane>
 
-        <el-tab-pane label="单测试用例输入" name="third">
-          <SingleCase />
-        </el-tab-pane>
 
-        <el-tab-pane label="缺陷版本记录" name="fifth">
-          <BugRecord :parentHeight="parentHeight" />
-        </el-tab-pane>
+
       </el-tabs>
     </el-card>
   </div>

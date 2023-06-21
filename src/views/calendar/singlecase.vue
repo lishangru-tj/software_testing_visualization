@@ -84,6 +84,21 @@ export default {
     },
     formatDate(year, month, day) {
       // 检查输入的年月日是否是合法日期
+      var days_in_month = [0,31, 28 + this.is_leap_year(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      if(day<days_in_month[month])
+      {
+        day++;
+      }
+      else if(month===12)
+      {
+        year++;
+        month=1;
+        day=1;
+      }
+      else {
+        month++;
+        day=1;
+      }
       if (this.isValidDate(year, month, day)) {
         // 使用padStart函数来确保月份和日期始终是两位数
         var formattedDate = year + '-' + String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');

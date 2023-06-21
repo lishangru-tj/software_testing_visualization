@@ -14,9 +14,6 @@
           <SingleCase />
         </el-tab-pane>
 
-        <el-tab-pane label="缺陷版本记录" name="fifth">
-          <BugRecord :parentHeight="parentHeight" />
-        </el-tab-pane>
       </el-tabs>
     </el-card>
   </div>
@@ -34,7 +31,7 @@ export default {
     CalendarQuestion,
     SystemTest,
     SingleCase,
-    BugRecord
+
   },
   props: {},
   data() {
