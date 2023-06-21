@@ -35,7 +35,7 @@
           <span>单元测试</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="/unit">单元测试报告</el-menu-item>
+          <el-menu-item index="/unit">测试结果展示</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
 
