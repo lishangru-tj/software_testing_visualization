@@ -2,7 +2,6 @@ import Cash from '@/views/cash/'
 import Home from '@/views/home/'
 import Layout from '@/views/layout/'
 import Login from '@/views/login/'
-import Sales from '@/views/sales/'
 import Triangle from '@/views/triangle'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -14,9 +13,11 @@ import Four from '@/views/four/'
 import Nine from '@/views/nine/'
 import Seven from '@/views/seven/'
 import Ten from '@/views/ten/'
-import Thirteen from '@/views/thirteen/'
+import SevenTeen from '@/views/seventeen/'
 import Twelve from '@/views/twelve/'
 import Two from '@/views/two/'
+import Sixteen from '@/views/sixteen/'
+
 import Unit from '@/views/unit/'
 import Inte from '@/views/inte/'
 
@@ -51,11 +52,6 @@ const routes = [
         path:'/calendar',
         name:'calendar',
         component: () => import("@/views/calendar")
-      },
-      {
-        path:'/sales',
-        name:'sales',
-        component:Sales
       },
       {
         path:'/two',
@@ -98,9 +94,14 @@ const routes = [
         component:Twelve
       },
       {
-        path:'/thirteen',
-        name:'thirteen',
-        component:Thirteen
+        path:'/SevenTeen',
+        name:'SevenTeen',
+        component:SevenTeen
+      },
+      {
+        path:'/sixteen',
+        name:'sixteen',
+        component:Sixteen
       },
       {
         path:'/unit',

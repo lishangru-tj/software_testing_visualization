@@ -10,16 +10,13 @@
         <el-button @click="reset(value)" class="reset-button" type="warning" plain>重置</el-button>
       </div>
     </div>
-
-    <el-divider content-position="right">测试用例</el-divider>
-
     <div class="main-table">
       <el-table :data="tableData" :height="tableHeight" style="width: 100%" v-loading="loading"
         :row-class-name="tableRowClassName">
         <el-table-column prop="id" label="测试用例编号" width="120" align="center"></el-table-column>
-        <el-table-column prop="M" label="销售的主机数量M（台）" width="150" align="center"></el-table-column>
-        <el-table-column prop="I" label="销售的显示器数量I（台）" width="150" align="center"></el-table-column>
-        <el-table-column prop="P" label="销售的外设数量P（套）" width="150" align="center"></el-table-column>
+        <el-table-column prop="M" label="销售主机数量M（台）" width="150" align="center"></el-table-column>
+        <el-table-column prop="I" label="销售显示器数量I（台）" width="180" align="center"></el-table-column>
+        <el-table-column prop="P" label="销售外设数量P（套）" width="180" align="center"></el-table-column>
         <el-table-column prop="predict" label="预计状态" width="100" align="center"></el-table-column>
         <el-table-column prop="pre_amount" label="预计销售额" width="100" align="center"></el-table-column>
         <el-table-column prop="pre_earn" label="预计佣金" width="100" align="center"></el-table-column>
@@ -43,14 +40,20 @@
 </template>
 
 <script>
-import mock_1_json from "@/mock/sales/sales_mock.json";
+import mock_1_json from "@/mock/four/sales_mock_1.json";
+import mock_2_json from "@/mock/four/sales_mock_2.json";
+import mock_3_json from "@/mock/four/sales_mock_3.json";
 export default {
   name: "SystemTest",
   components: {},
   props: ["parentHeight"],
   data() {
     return {
-      options: [{ value: "1", label: "边界值分析法" }],
+      options: [
+        { value: "1", label: "基本边界值分析法" },
+        { value: "2", label: "健壮性边界测试" },
+        { value: "3", label: "考虑销售额的基本边界值分析法" }
+      ],
       value: "1",
       tableData: [],
       loading: false,
@@ -59,7 +62,7 @@ export default {
   },
   computed: {
     tableHeight() {
-      return this.parentHeight - 260 > 650 ? 650 : this.parentHeight - 260;
+      return this.parentHeight - 260 > 600 ? 600 : this.parentHeight - 260;
     },
   },
   watch: {
@@ -93,38 +96,37 @@ export default {
     tableRowClassName({ row, rowIndex }) {
       return this.classState[rowIndex];
     },
-    testsales(testData) {
-
-    },
     doTest() {//计算销售额
-      let newData = mock_1_json
+      let newData = this.value === "1" ? mock_1_json : this.value === "2" ? mock_2_json : mock_3_json
       const _this = this;
       this.loading = true;
-      console.log(newData)
+      console.log(this.value)
       var commissionRate = 0;
       newData.forEach((item, index) => {
         if (item["M"] < 1 || item["M"] > 70) {
-          newData[index].actual = "异常"
-          return
+          newData[index].actual = "错误"
+          return 
         }
-        if (item["I"] < 1 || item["I"] > 80) {
-          newData[index].actual = "异常"
-          return
+        else if (item["I"] < 1 || item["I"] > 80) {
+          newData[index].actual = "错误"
+          return 
         }
-        if (item["P"] < 1 || item["P"] > 90) {
-          newData[index].actual = "异常"
-          return
+        else if (item["P"] < 1 || item["P"] > 90) {
+          newData[index].actual = "错误"
+          return 
         }
-        newData[index].actual = "正常"
-        newData[index].amount = item["M"] * 25 + item["I"] * 30 + item["P"] * 45
-        if (newData[index].amount <= 1000) {
-          commissionRate = 0.1;
-        } else if (newData[index].amount <= 1800) {
-          commissionRate = 0.15;
-        } else {
-          commissionRate = 0.2;
+        else {
+          newData[index].actual = "正常"
+          newData[index].amount = item["M"] * 25 + item["I"] * 30 + item["P"] * 45
+          if (newData[index].amount <= 1000) {
+            commissionRate = 0.1;
+          } else if (newData[index].amount <= 1800) {
+            commissionRate = 0.15;
+          } else {
+            commissionRate = 0.2;
+          }
+          newData[index].earn = newData[index].amount * commissionRate
         }
-        newData[index].earn = newData[index].amount * commissionRate
       })
       _this.tableData.forEach((item, index) => {
         let responseObject = newData[index];

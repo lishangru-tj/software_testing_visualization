@@ -12,9 +12,14 @@
       </div>
     </div>
     <div>
+      <div id="use_case" style="display:none">
+        <h6 >Discount的扩展决策表:</h6>
+        <img  src="./use_case.png" width="100%"  >
+      </div>
+      
       <h6>方法介绍：{{ introduce }}</h6>
+      
     </div>
-    <el-divider content-position="left">测试用例</el-divider>
 
     <div class="main-table">
       <el-table :data="tableData" :height="tableHeight" border style="width: 100%;height: 100%;" v-loading="loading"
@@ -64,6 +69,7 @@ export default {
       ],
       value: "1",
       tableData: [],
+      jueceshu:[{value:"1",}],
       loading: false,
       classState: [],
       json: {},
@@ -138,33 +144,28 @@ export default {
     reset(value) {
       if (value === "1") {
         this.json = mock_1_json;
-        introduce: "边界值法",
+        this.introduce="边界值法",
+        document.getElementById("use_case").style.display="none"
         this.initTableData(mock_1_json);
       }
       else if (value === "2") {
+        document.getElementById("use_case").style.display="none"
         this.introduce = "使用等价类法，我们可以将输入的范围划分为等价类，然后从每个等价类中选择代表性的测试用例。根据题目要求，我们可以将通话时间和未按时缴费次数分别划分为以下等价类:"
+        +"针对通话时间划分等价类：可以分为六个等价类"
           + "\n等价类1: 通话时间为0分钟"
           + "\n等价类2: 0分钟 < 通话时间 ≤ 60分钟"
           + "\n等价类3: 60分钟 < 通话时间 ≤ 120分钟"
           + "\n等价类4: 120分钟 < 通话时间 ≤ 180分钟"
           + "\n等价类5: 180分钟 < 通话时间 ≤ 300分钟"
           + "\n等价类6: 通话时间 > 300分钟"
-          + "\n等价类7: 未按时缴费次数为0次"
-          + "\n等价类8: 未按时缴费次数为1次"
-          + "\n等价类9: 未按时缴费次数为2次"
-          + "\n等价类10: 未按时缴费次数为3次"
-          + "\n等价类11: 未按时缴费次数为4次"
-          + "\n等价类12: 未按时缴费次数为5次"
-          + "\n等价类13: 未按时缴费次数为6次"
-          + "\n等价类14: 未按时缴费次数 > 6次"
-          + "\n根据上述等价类，我们可以选择以下测试用例："
-          + "\n等价类1 + 等价类7；等价类2 + 等价类7；等价类3 + 等价类7；等价类4 + 等价类8；等价类5 + 等价类14；等价类6 + 等价类13"
-        this.json = mock_2_json;
+          +"对于上面六个等价类,除等价类一外都可以将未缴费次数划分为小于限制和大于限制两种,所以一共是十一个等价类"
+          +"对于有限区间,通话时间选择中间,无限区间选择稍大于或小于界限"
         this.initTableData(mock_2_json);
       }
       else {
+        document.getElementById("use_case").style.display=""
         this.json = mock_3_json;
-        this.introduce="根据题目要求，我们可以选择以下因素和对应的取值："
+        this.introduce="每一个规则对应一个测试用例，共十个测试用例："
         this.initTableData(mock_3_json);
       }
     }
