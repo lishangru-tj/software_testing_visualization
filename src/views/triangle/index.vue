@@ -18,16 +18,13 @@
           <SingleCase />
         </el-tab-pane>
 
-        <el-tab-pane label="缺陷版本记录" name="fifth">
-          <BugRecord :parentHeight="parentHeight" />
-        </el-tab-pane>
+
       </el-tabs>
     </el-card>
   </div>
 </template>
 
 <script>
-import BugRecord from "./bug";
 import TriangleQuestion from "./question";
 import SingleCase from "./singlecase";
 import SystemTest from "./systemtest";
@@ -38,7 +35,6 @@ export default {
     TriangleQuestion,
     SystemTest,
     SingleCase,
-    BugRecord,
   },
   props: {},
   data() {

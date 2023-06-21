@@ -7,6 +7,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // import Eight from "@/views/eight"
+import Ecommerce from '@/views/ecommerce/'
 import Eleven from '@/views/eleven/'
 import Four from '@/views/four/'
 import Nine from '@/views/nine/'
@@ -37,11 +38,7 @@ const routes = [
         name:'home',
         component:Home
       },
-      // {
-      //   path:'/eight',
-      //   name:'eight',
-      //   component:Eight
-      // },
+      
       {
         path:'/cash',
         name:'cash',
@@ -60,6 +57,11 @@ const routes = [
         path:'/two',
         name:'two',
         component:Two
+      },
+      {
+        path:'/five',
+        name:'five',
+        component:Ecommerce
       },
       {
         path:'/four',
