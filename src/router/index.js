@@ -13,7 +13,7 @@ import Four from '@/views/four/'
 import Nine from '@/views/nine/'
 import Seven from '@/views/seven/'
 import Ten from '@/views/ten/'
-import Thirteen from '@/views/thirteen/'
+import SevenTeen from '@/views/seventeen/'
 import Twelve from '@/views/twelve/'
 import Two from '@/views/two/'
 
@@ -96,9 +96,9 @@ const routes = [
         component:Twelve
       },
       {
-        path:'/thirteen',
-        name:'thirteen',
-        component:Thirteen
+        path:'/SevenTeen',
+        name:'SevenTeen',
+        component:SevenTeen
       },
       {
         path:'/unit',

@@ -4,14 +4,11 @@
       <el-select v-model="value" placeholder="请选择测试方法">
         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
       </el-select>
-      <div class="button-group">
+      <!-- <div class="button-group">
         <el-button class="main-button" type="success" plain @click="doTest" :loading="loading">进行测试<i
             class="el-icon-upload el-icon--right"></i></el-button>
         <el-button @click="reset(value)" class="reset-button" type="warning" plain>重置</el-button>
-      </div>
-    </div>
-    <div>
-      <h6>方法介绍：{{ introduce }}</h6>
+      </div> -->
     </div>
     <el-divider content-position="left">测试用例</el-divider>
 
@@ -42,15 +39,16 @@
         <el-table-column prop="条件组合覆盖" label="条件组合覆盖" align="center"></el-table-column>
       </el-table>
     </div>
+    <img src="./13.png"/>
   </div>
 </template>
 
 <script>
-import mock_1_json from "@/mock/thirteen/thirteen_1.json";
-import mock_2_json from "@/mock/thirteen/thirteen_2.json";
-import mock_3_json from "@/mock/thirteen/thirteen_3.json";
-import mock_4_json from "@/mock/thirteen/thirteen_4.json";
-import mock_5_json from "@/mock/thirteen/thirteen_5.json";
+import mock_1_json from "@/mock/seventeen/thirteen_1.json";
+import mock_2_json from "@/mock/seventeen/thirteen_2.json";
+import mock_3_json from "@/mock/seventeen/thirteen_3.json";
+import mock_4_json from "@/mock/seventeen/thirteen_4.json";
+import mock_5_json from "@/mock/seventeen/thirteen_5.json";
 export default {
   name: "SystemTest",
   components: {},
