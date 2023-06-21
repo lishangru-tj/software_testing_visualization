@@ -43,14 +43,20 @@
 </template>
 
 <script>
-import mock_1_json from "@/mock/sales/sales_mock.json";
+import mock_1_json from "@/mock/four/sales_mock_1.json";
+import mock_2_json from "@/mock/four/sales_mock_2.json";
+import mock_3_json from "@/mock/four/sales_mock_3.json";
 export default {
   name: "SystemTest",
   components: {},
   props: ["parentHeight"],
   data() {
     return {
-      options: [{ value: "1", label: "边界值分析法" }],
+      options: [
+        { value: "1", label: "基本边界值分析法" },
+        { value: "2", label: "健壮性边界测试" },
+        { value: "3", label: "考虑销售额的基本边界值分析法" }
+      ],
       value: "1",
       tableData: [],
       loading: false,
@@ -59,7 +65,7 @@ export default {
   },
   computed: {
     tableHeight() {
-      return this.parentHeight - 260 > 650 ? 650 : this.parentHeight - 260;
+      return this.parentHeight - 260 > 700 ? 700 : this.parentHeight - 260;
     },
   },
   watch: {
@@ -93,38 +99,37 @@ export default {
     tableRowClassName({ row, rowIndex }) {
       return this.classState[rowIndex];
     },
-    testsales(testData) {
-
-    },
     doTest() {//计算销售额
-      let newData = mock_1_json
+      let newData = this.value === "1" ? mock_1_json : this.value === "2" ? mock_2_json : mock_3_json
       const _this = this;
       this.loading = true;
-      console.log(newData)
+      console.log(this.value)
       var commissionRate = 0;
       newData.forEach((item, index) => {
         if (item["M"] < 1 || item["M"] > 70) {
-          newData[index].actual = "异常"
-          return
+          newData[index].actual = "错误"
+          return 
         }
-        if (item["I"] < 1 || item["I"] > 80) {
-          newData[index].actual = "异常"
-          return
+        else if (item["I"] < 1 || item["I"] > 80) {
+          newData[index].actual = "错误"
+          return 
         }
-        if (item["P"] < 1 || item["P"] > 90) {
-          newData[index].actual = "异常"
-          return
+        else if (item["P"] < 1 || item["P"] > 90) {
+          newData[index].actual = "错误"
+          return 
         }
-        newData[index].actual = "正常"
-        newData[index].amount = item["M"] * 25 + item["I"] * 30 + item["P"] * 45
-        if (newData[index].amount <= 1000) {
-          commissionRate = 0.1;
-        } else if (newData[index].amount <= 1800) {
-          commissionRate = 0.15;
-        } else {
-          commissionRate = 0.2;
+        else {
+          newData[index].actual = "正常"
+          newData[index].amount = item["M"] * 25 + item["I"] * 30 + item["P"] * 45
+          if (newData[index].amount <= 1000) {
+            commissionRate = 0.1;
+          } else if (newData[index].amount <= 1800) {
+            commissionRate = 0.15;
+          } else {
+            commissionRate = 0.2;
+          }
+          newData[index].earn = newData[index].amount * commissionRate
         }
-        newData[index].earn = newData[index].amount * commissionRate
       })
       _this.tableData.forEach((item, index) => {
         let responseObject = newData[index];

@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import mock_1_json from "@/mock/sales/sales_mock.json";
+import mock_1_json from "@/mock/sales/sales_mock_1.json";
 //import { testsales } from "@/api/salestest.js";
 export default {
   name: "SystemTest",

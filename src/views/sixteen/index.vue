@@ -11,6 +11,12 @@
       </el-tabs>
     </el-card>
 
+
+
+
+
+
+    
   </div>
 </template>
 
@@ -18,7 +24,7 @@
 
 import SalesQuestion from "./question";
 export default {
-  name: "ten",
+  name: "sixteen",
   components: { SalesQuestion },
   props: {},
   data() {

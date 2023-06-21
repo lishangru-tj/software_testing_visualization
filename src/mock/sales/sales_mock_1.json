@@ -11,6 +11,6 @@
     {"id": "TS10","M": "19","I": "18","P":"18","predict":"正常","pre_amount":"1825","pre_earn":"365"},
     {"id": "TS11","M": "50","I": "50","P":"50","predict":"正常","pre_amount":"5000","pre_earn":"1000"},
     {"id": "TS12","M": "70","I": "80","P":"89","predict":"正常","pre_amount":"8155","pre_earn":"1635"},
-    {"id": "TS13","M": "70","I": "80","P":"90","predict":"正常","pre_amount":"8200","pre_earn":"1640"}
-
+    {"id": "TS13","M": "70","I": "80","P":"90","predict":"正常","pre_amount":"8200","pre_earn":"1640"},
+    {"id": "TS14","M": "29","I": "23","P":"43","predict":"正常","pre_amount":"8200","pre_earn":"1640"}
 ]
