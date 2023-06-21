@@ -27,7 +27,18 @@
         >
       </div>
     </div>
-
+    <div v-if="value=='1'">
+      <p>设abc的基本边界（最小值，略高于最小值、正常值、略低于最大值和最大值）分别为：1，2，100，199，200</p>
+      <p>设abc的健壮性边界（略超过最大值，略小于最小值）： 201， 0</p>
+    </div>
+    <div v-else>
+      <p>根据输出结果划分4个等价类:</p>
+      <p>R1= {(a, b, c):有三条边a, b和c的等边三角形}
+      R2= {(a, b, c):有三条边a,b和 c的等腰三角形}
+      R3={(a, b, c):有三条边a, b和c的不等边三角形}
+      R4={(a, b, c):三条边a, b和c不构成三角形}</p>
+      <p>然后再从输入变量入手，设计出额外弱健壮测试用例.本题使用弱健壮等价类,其中弱─般等价类4个测试用例,额外弱健壮测试用例为 6 个</p>
+    </div>
     <el-divider content-position="left">测试用例</el-divider>
 
     <div class="main-table">
@@ -68,11 +79,6 @@
         <el-table-column
           prop="actual"
           label="程序实际输出"
-          align="center"
-        ></el-table-column>
-        <el-table-column
-          prop="info"
-          label="程序运行信息"
           align="center"
         ></el-table-column>
         <el-table-column prop="state" label="测试结果" align="center">
@@ -136,8 +142,11 @@ export default {
   },
   methods: {
     testTriangle(a, b, c) {
-      if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0)
-        return '不构成三角形';
+      a = parseInt(a);
+      b = parseInt(b);
+      c = parseInt(c);
+      if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0|| a > 200 || b > 200 || c > 200)
+        return '输入非法';
       else if (a + b <= c || b + c <= a || a + c <= b)
         return '不构成三角形';
       else if (a === b && b === c)
