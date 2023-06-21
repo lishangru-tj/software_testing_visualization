@@ -38,6 +38,7 @@
           <el-menu-item index="/unit">测试结果展示</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
+      <el-menu-item index="/inte">集成测试</el-menu-item>
 
   </el-menu>
 </template>

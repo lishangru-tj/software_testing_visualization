@@ -6,6 +6,9 @@
         <el-tab-pane label="缺陷版本" name="first">
           <Bugversion />
         </el-tab-pane>
+        <el-tab-pane label="最终版本" name="second">
+          <Ultimateversion />
+        </el-tab-pane>
 
 
       </el-tabs>
@@ -23,9 +26,10 @@
 <script>
 
 import Bugversion from "./bug";
+import Ultimateversion from "./ultimate";
 export default {
   name: "unit",
-  components: { Bugversion },
+  components: { Bugversion,Ultimateversion },
   props: {},
   data() {
     return {
