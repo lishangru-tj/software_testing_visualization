@@ -142,7 +142,7 @@ export default {
         return '不构成三角形';
       else if (a === b && b === c)
         return '等边三角形';
-      else if (a === b || b === c|| a === c) 
+      else if (a === b || b === c|| a === c)
         return '等腰三角形';
       else
         return '一般三角形';

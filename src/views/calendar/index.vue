@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%" ref="tabs">
+  <div  ref="tabs">
     <el-card style="height: 100%" shadow="hover">
       <el-tabs v-model="activeName">
         <el-tab-pane label="问题描述" name="first">

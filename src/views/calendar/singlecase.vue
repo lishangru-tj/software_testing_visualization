@@ -30,7 +30,7 @@
         <div>
     <span>实际输出：{{actual}}</span>
     <el-divider direction="vertical"></el-divider>
-    <span>运行信息：{{info}}</span>
+    <span>测试结果：{{state}}</span>
     <el-divider direction="vertical"></el-divider>
   </div>
   </div>
@@ -47,14 +47,14 @@ export default {
   data() {
     return {
       actual:"",
-      info:"",
+      state:"",
       labelPosition: 'right',
         formLabelAlign: {
           year: 0,
           month: 0,
           day: 0,
           expectation:0,
-        }, 
+        },
         date:"",
         loading:false,
 
@@ -65,21 +65,49 @@ export default {
   created() {},
   mounted() {},
   methods: {
+    is_leap_year( year)
+    {
+      if( (year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+      {
+        return 1;
+      }
+      else {return 0;}
+
+    },
+    isValidDate(year, month, day) {
+      if (year < 1900  || year > 2100 || month > 12 || day < 1) {
+        return false;
+      }
+
+      var days_in_month = [0,31, 28 + this.is_leap_year(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      return day <= days_in_month[month];
+    },
+    formatDate(year, month, day) {
+      // 检查输入的年月日是否是合法日期
+      if (this.isValidDate(year, month, day)) {
+        // 使用padStart函数来确保月份和日期始终是两位数
+        var formattedDate = year + '-' + String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+        return formattedDate ;
+      } else {
+        return String(-1);
+      }
+    },
     doTest(){
-      let formdata = {
-        id: "TS1",
-        year: this.formLabelAlign.year,
-        month: this.formLabelAlign.month,
-        day:this.formLabelAlign.day,
-        expectation: this.formLabelAlign.expectation,
+      const year=this.formLabelAlign.year,
+          month= this.formLabelAlign.month,
+          day=this.formLabelAlign.day,
+          expectation= this.formLabelAlign.expectation;
+      const result = this.formatDate(year, month, day) ;
+      this.actual = result;
+      if(result===expectation)
+      {
+        this.state= "测试用例通过";
       }
-      let data = {
-        calendar_test_list:[formdata],
+      else {
+        this.state="测试用例失败";
       }
-      testcalendar(data).then((res)=>{
-        this.actual = res.data.test_result[0].actual;
-        this.info = res.data.test_result[0].info;
-      })
+
+
 
     }
   },
