@@ -1,22 +1,10 @@
-import Cash from '@/views/cash/'
+
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import Home from '@/views/home/'
 import Layout from '@/views/layout/'
 import Login from '@/views/login/'
 import Triangle from '@/views/triangle'
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-
-// import Eight from "@/views/eight"
-import Ecommerce from '@/views/ecommerce/'
-import Eleven from '@/views/eleven/'
-import Four from '@/views/four/'
-import Nine from '@/views/nine/'
-import Seven from '@/views/seven/'
-import Ten from '@/views/ten/'
-import SevenTeen from '@/views/seventeen/'
-import Twelve from '@/views/twelve/'
-import Two from '@/views/two/'
-import Sixteen from '@/views/sixteen/'
 
 import Unit from '@/views/unit/'
 import Inte from '@/views/inte/'
@@ -25,93 +13,93 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path:'/login',
-    name:'login',
-    component:Login
+    path: '/login',
+    name: 'login',
+    component: Login
   },
   {
-    path:'/',
-    component:Layout,
-    children:[
+    path: '/',
+    component: Layout,
+    children: [
       {
-        path:'',
-        name:'home',
-        component:Home
-      },
-      
-      {
-        path:'/cash',
-        name:'cash',
-        component:Cash
-      },{
-        path:'/triangle',
-        name:'triangle',
-        component:Triangle
+        path: '',
+        name: 'home',
+        component: Home
       },
       {
-        path:'/calendar',
-        name:'calendar',
+        path: '/triangle',
+        name: 'triangle',
+        component: Triangle
+      },
+      {
+        path: '/calendar',
+        name: 'calendar',
         component: () => import("@/views/calendar")
       },
       {
-        path:'/two',
-        name:'two',
-        component:Two
+        path: '/problem03',
+        name: 'problem03',
+        component: () => import("@/views/problem03")
       },
       {
-        path:'/five',
-        name:'five',
-        component:Ecommerce
+        path: '/problem04',
+        name: 'problem04',
+        component: () => import("@/views/problem04")
       },
       {
-        path:'/four',
-        name:'four',
-        component:Four
+        path: '/problem05',
+        name: 'problem05',
+        component: () => import("@/views/problem05")
       },
       {
-        path:'/seven',
-        name:'seven',
-        component:Seven
+        path: '/problem07',
+        name: 'problem07',
+        component: () => import("@/views/problem07")
       },
       {
-        path:'/nine',
-        name:'nine',
-        component:Nine
+        path: '/problem08',
+        name: 'problem08',
+        component: () => import("@/views/problem08")
       },
       {
-        path:'/ten',
-        name:'ten',
-        component:Ten
+        path: '/problem12',
+        name: 'problem12',
+        component: () => import("@/views/problem12")
       },
       {
-        path:'/eleven',
-        name:'eleven',
-        component:Eleven
+        path: '/problem13',
+        name: 'problem13',
+        component: () => import("@/views/problem13")
       },
       {
-        path:'/twelve',
-        name:'twelve',
-        component:Twelve
+        path: '/problem14',
+        name: 'problem14',
+        component: () => import("@/views/problem14")
       },
       {
-        path:'/SevenTeen',
-        name:'SevenTeen',
-        component:SevenTeen
+        path: '/problem15',
+        name: 'problem15',
+        component: () => import("@/views/problem15")
       },
       {
-        path:'/sixteen',
-        name:'sixteen',
-        component:Sixteen
+        path: '/problem16',
+        name: 'problem16',
+        component: () => import("@/views/problem16")
       },
       {
-        path:'/unit',
-        name:'unit',
-        component:Unit
+        path: '/problem17',
+        name: 'problem17',
+        component: () => import("@/views/problem17")
       },
       {
-        path:'/inte',
-        name:'inte',
-        component:Inte
+        path: '/unit',
+        name: 'unit',
+        component: Unit
+      },
+      {
+        path: '/inte',
+        name: 'inte',
+        component: Inte
       }
 
     ]

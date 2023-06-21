@@ -1,60 +1,106 @@
 <template>
-  <div  ref="tabs">
-    <el-card style="height: 100%" shadow="hover">
-      <el-tabs v-model="activeName">
+  <div>
+    <el-card shadow="hover">
+      <el-tabs v-model="activeName" @tab-click="handleClick">
+
         <el-tab-pane label="问题描述" name="first">
-          <CalendarQuestion />
+          <SalesQuestion />
         </el-tab-pane>
 
-        <el-tab-pane label="系统测试用例测试" name="second">
-          <SystemTest :parentHeight="parentHeight" />
-        </el-tab-pane>
-
-        <el-tab-pane label="单测试用例输入" name="third">
-          <SingleCase />
-        </el-tab-pane>
 
       </el-tabs>
     </el-card>
+
+
+
+
+
+
+    
   </div>
 </template>
 
 <script>
-import BugRecord from "./bug";
-import CalendarQuestion from "./question";
-import SingleCase from "./singlecase";
-import SystemTest from "./systemtest";
 
+import SalesQuestion from "./question";
 export default {
-  name: "Calendar",
-  components: {
-    CalendarQuestion,
-    SystemTest,
-    SingleCase,
-
-  },
+  name: "sixteen",
+  components: { SalesQuestion },
   props: {},
   data() {
     return {
+      options: [
+      ],
+      value: "选项1",
+      tableData: [],
+      loading: false,
+      classState: [],
+      stateflag: false,
       activeName: "first",
-      parentHeight: 3333,
+      isFirst:true,
+      labelPosition: 'right',
+        formLabelAlign: {
+          name: '',
+          region: '',
+          type: ''
+        }
     };
   },
   computed: {},
   watch: {},
-  created() {
-    window.addEventListener("resize", this.getHeight);
+  created() {},
+  mounted() {
+    
+
   },
-  mounted() {},
   methods: {
-    getHeight() {
-      try {
-        this.parentHeight = this.$refs.tabs.offsetHeight;
-      } catch (err) {}
-    },
+    
   },
 };
+
+
+
+
+
 </script>
 
+
+
+
 <style scoped lang="less">
+/deep/ .el-table .error-row {
+  background: #fff0f0;
+}
+/deep/ .el-table .success-row {
+  background-color: #f7fff9;
+}
+.item {
+  margin-bottom: 10px;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.main-form {
+  margin-top: 10px;
+}
+.main-button {
+  width: 100%;
+  margin-top: 10px;
+}
+.box-card {
+  padding: 0;
+}
+.single-form{
+  width:600px;
+  top:50%;
+  left:50%;
+}
+.block{
+
+}
 </style>
