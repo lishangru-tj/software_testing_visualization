@@ -3,7 +3,7 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#545c64"
+      background-color="#453568"
       text-color="#fff"
       active-text-color="#ffd04b"
       :collapse="isCollapse"
@@ -15,8 +15,8 @@
           <span>课程练习</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="/calendar">万年历问题</el-menu-item>
-          <el-menu-item index="/triangle">判断三角形</el-menu-item>
+          <el-menu-item index="/calendar">第2，10，11题：万年历问题</el-menu-item>
+          <el-menu-item index="/triangle">第1，9题: 判断三角形</el-menu-item>
           <el-menu-item index="/problem03">第3题：销售管理系统</el-menu-item>
           <el-menu-item index="/problem04">第4题：电脑销售系统</el-menu-item>
           <el-menu-item index="/problem05">第5题：讨论题</el-menu-item>
@@ -27,7 +27,7 @@
           <el-menu-item index="/problem14">第14题：实时Web系统</el-menu-item>
           <el-menu-item index="/problem16">第16题：构建程序图</el-menu-item>
           <el-menu-item index="/problem17">第17题：销售系统</el-menu-item>
-          
+
           <!-- <el-menu-item index="/calendar">万年历问题</el-menu-item>
           <el-menu-item index="/sales">电脑销售系统</el-menu-item>
           <el-menu-item index="/two">第2题：销售管理系统</el-menu-item>
