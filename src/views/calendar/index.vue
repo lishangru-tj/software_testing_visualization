@@ -6,7 +6,14 @@
         <el-tab-pane label="问题描述" name="first">
           <SalesQuestion />
         </el-tab-pane>
+        <el-tab-pane label="系统测试用例测试" name="second">
+          <SystemTest :parentHeight="parentHeight" />
 
+        </el-tab-pane>
+
+        <el-tab-pane  label="单测试用例输入" name="third">
+          <SingleCase />
+        </el-tab-pane>
 
       </el-tabs>
     </el-card>
@@ -16,16 +23,18 @@
 
 
 
-    
+
   </div>
 </template>
 
 <script>
 
 import SalesQuestion from "./question";
+import SingleCase from "./singlecase.vue";
+import SystemTest from "./systemtest.vue";
 export default {
   name: "sixteen",
-  components: { SalesQuestion },
+  components: { SalesQuestion ,SingleCase,SystemTest},
   props: {},
   data() {
     return {
@@ -50,11 +59,11 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    
+
 
   },
   methods: {
-    
+
   },
 };
 

@@ -74,11 +74,7 @@
           label="实际输出"
           align="center"
         ></el-table-column>
-        <el-table-column
-          prop="info"
-          label="程序运行信息"
-          align="center"
-        ></el-table-column>
+
         <el-table-column prop="state" label="测试结果" align="center">
           <template slot-scope="scope">
             <div v-if="scope.row.state == true" class="icon-svg">
